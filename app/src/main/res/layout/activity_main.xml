@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="loginview"
+            type="com.sessionretrofitvidloginviewmodel.viewmodel.LoginViewModel"/>
+
+        <variable
+            name="presenter"
+            type="com.sessionretrofitvidloginviewmodel.presenter.Presenter"/>
+
+
+    </data>
+
+
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green"
+    tools:context="com.sessionretrofitvidloginviewmodel.MainActivity">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/username"
+        android:layout_marginTop="20dp"
+        android:hint="User Name"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:text="@={loginview.username}"
+        android:textColor="@color/white"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userpass"
+        android:layout_marginTop="20dp"
+        android:hint="User Pas"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        android:text="@={loginview.userpass}"
+        android:layout_below="@+id/username"
+        android:inputType="textPassword"
+        android:imeOptions="actionDone"
+        android:textColor="@color/white"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:text="Login"
+        android:background="@color/red1"
+        android:onClick="@{(v)->presenter.loginData()}"
+        android:layout_alignParentBottom="true"/>
+
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progess"
+        app:visibility="@{loginview.progressBar}"
+        android:layout_centerInParent="true"/>
+
+
+
+</RelativeLayout>
+</layout>
