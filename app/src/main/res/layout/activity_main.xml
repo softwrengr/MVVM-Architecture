@@ -24,8 +24,20 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green"
+    android:background="@color/colorPrimary"
     tools:context="com.sessionretrofitvidloginviewmodel.MainActivity">
+
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10sp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:text="Login "/>
 
 
     <EditText
@@ -33,11 +45,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/username"
         android:layout_marginTop="20dp"
-        android:hint="User Name"
+        android:hint="Email"
         android:textColorHint="@color/white"
         android:textSize="20dp"
         android:imeOptions="actionNext"
+        android:layout_marginRight="10sp"
+        android:layout_marginLeft="10sp"
         android:inputType="textEmailAddress"
+        android:backgroundTint="@color/white"
+        android:layout_below="@+id/login"
         android:text="@={loginview.username}"
         android:textColor="@color/white"
         />
@@ -47,11 +63,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/userpass"
         android:layout_marginTop="20dp"
-        android:hint="User Pas"
+        android:hint="Password"
         android:textColorHint="@color/white"
         android:textSize="20dp"
         android:text="@={loginview.userpass}"
         android:layout_below="@+id/username"
+        android:backgroundTint="@color/white"
+        android:layout_marginRight="10sp"
+        android:layout_marginLeft="10sp"
         android:inputType="textPassword"
         android:imeOptions="actionDone"
         android:textColor="@color/white"
@@ -62,7 +81,7 @@
         android:textColor="@color/white"
         android:textSize="22dp"
         android:text="Login"
-        android:background="@color/red1"
+        android:background="@color/colorAccent"
         android:onClick="@{(v)->presenter.loginData()}"
         android:layout_alignParentBottom="true"/>
 

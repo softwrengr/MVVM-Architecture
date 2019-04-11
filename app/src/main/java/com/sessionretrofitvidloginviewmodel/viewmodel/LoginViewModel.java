@@ -83,7 +83,7 @@ public class LoginViewModel extends Observable {
     }
 
 
-    void showToast(String msg) {
+   private void showToast(String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
         context.startActivity(new Intent(context, ContainerActivity.class));
 
