@@ -4,24 +4,34 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class LoginResponseModel {
+
+
+    @SerializedName("success")
+    @Expose
+    private Boolean success;
     @SerializedName("status")
     @Expose
-    private Boolean status;
+    private Integer status;
     @SerializedName("message")
     @Expose
     private String message;
-    @SerializedName("data")
+    @SerializedName("user")
     @Expose
-    private User data;
-    @SerializedName("code")
-    @Expose
-    private Integer code;
+    private UserDetailModel user;
 
-    public Boolean getStatus() {
+    public Boolean getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
+    }
+
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -33,19 +43,11 @@ public class LoginResponseModel {
         this.message = message;
     }
 
-    public User getData() {
-        return data;
+    public UserDetailModel getUser() {
+        return user;
     }
 
-    public void setData(User data) {
-        this.data = data;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
+    public void setUser(UserDetailModel user) {
+        this.user = user;
     }
 }

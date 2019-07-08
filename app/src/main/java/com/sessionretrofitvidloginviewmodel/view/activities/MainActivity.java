@@ -1,9 +1,8 @@
-package com.sessionretrofitvidloginviewmodel;
+package com.sessionretrofitvidloginviewmodel.view.activities;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.sessionretrofitvidloginviewmodel.R;
 import com.sessionretrofitvidloginviewmodel.databinding.ActivityMainBinding;
@@ -26,11 +25,8 @@ public class MainActivity extends AppCompatActivity{
         activityMainBinding.setPresenter(new Presenter() {
             @Override
             public void loginData() {
-
                 final String name = activityMainBinding.username.getText().toString();
                 final String pass = activityMainBinding.userpass.getText().toString();
-
-
                 loginViewModel.sendLoginRequest(name, pass);
 
             }

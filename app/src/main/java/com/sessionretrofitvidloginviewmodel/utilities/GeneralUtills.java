@@ -30,47 +30,4 @@ public class GeneralUtills {
         return fragment;
     }
 
-    public static SharedPreferences.Editor putStringValueInEditor(Context context, String key, String value) {
-        sharedPreferences = getSharedPreferences(context);
-        editor = sharedPreferences.edit();
-        editor.putString(key, value).commit();
-        return editor;
-    }
-
-    public static SharedPreferences.Editor putIntegerValueInEditor(Context context, String key, int value) {
-        sharedPreferences = getSharedPreferences(context);
-        editor = sharedPreferences.edit();
-        editor.putInt(key, value).commit();
-        return editor;
-    }
-
-    public static SharedPreferences.Editor putBooleanValueInEditor(Context context, String key, boolean value) {
-        sharedPreferences = getSharedPreferences(context);
-        editor = sharedPreferences.edit();
-        editor.putBoolean(key, value).commit();
-        return editor;
-    }
-
-
-
-    public static SharedPreferences getSharedPreferences(Context context) {
-        return context.getSharedPreferences("MVVM", 0);
-    }
-
-    public static int getItemID(Context context){
-        return getSharedPreferences(context).getInt("itemID",0);
-    }
-
-
-
-    public static boolean isLogin(Context context){
-        return getSharedPreferences(context).getBoolean("isLogin",false);
-    }
-
-    public static String getLocation(Context context){
-        return getSharedPreferences(context).getString("location","");
-    }
-
-
-
 }
